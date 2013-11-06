@@ -79,16 +79,12 @@ public class MajorityVoteGeneralized<TypeWID,TypeQ,TypeR> {
 						} else if (maxClassPrior < currentClassPrior){
 							trackMax.putFirst(keyInner);
 							trackMax.putSecond(currentClassCount);
-							continue;
-						}
-					} 
+							continue;}} 
 					Random number = new Random();
 					if(number.nextDouble()>=0.5){
 						trackMax.putFirst(keyInner);
-						trackMax.putSecond(currentClassCount);
-					}
-				}
-			}
+						trackMax.putSecond(currentClassCount);}}}
+			
 			Map<TypeR,Double> majorityMap = new HashMap<TypeR, Double>();
 			for(TypeR keyInner:currentModel.getResponseCategories()){
 				double currentClassCount = innerMap.get(keyInner);

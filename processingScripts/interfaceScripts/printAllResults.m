@@ -12,8 +12,11 @@ for j = 1:length(directories)
 %     if(~(strcmp(directories(j).name,'nFoldSet_95')))
 %         continue;
 %     end
-    allData = loadNFold([nfoldDir '/' directories(j).name]);
+    allData = loadNFold([nfoldDir '/' directories(j).name],{'mediaEval1Q1','mediaEval1Q2'});
     for i = 1:length(allData)
+        idx = strfind(allData(i).both(1).path,'/');
+        flowSQUARE(allData(i).both(1).path(1:idx(end)),allData(i).both(1).path(1:idx(end)));
+        
         flowGAL(allData(i).eval,allData(i).tune,true,false);
         flowGAL(allData(i).eval,allData(i).tune,false,true);
         flowGAL(allData(i).eval,allData(i).tune,false,false);

@@ -158,10 +158,12 @@ public class Results<TypeQ,TypeR> {
 //			if(tempResult.intValue() == 0)
 //				continue;
 			
-			Double evalInd = groundTruthVector.getSecond().get(i);
+			if(groundTruthVector!=null){
+				Double evalInd = groundTruthVector.getSecond().get(i);
+				if(evalInd.intValue() == 0){
+					++i;
+					continue;}}
 			++i;
-			if(evalInd.intValue() == 0)
-				continue;
 			
 			if(!newline)
 				outString+="\n";

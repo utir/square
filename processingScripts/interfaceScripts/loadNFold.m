@@ -1,7 +1,8 @@
-function allData = loadNFold(nFoldEvalDir)
+function allData = loadNFold(nFoldEvalDir, varargin)
 % loadNFold loads data from nFold Evaluation directory
 % Inputs: 
 %   nFoldEvalDir -
+%   /Users/aashish/dev/java/crwdQA/crowdData/nFoldSets/nFoldSet_10
 % Outputs:
 %   allData -
 % ****************************************************
@@ -10,12 +11,23 @@ function allData = loadNFold(nFoldEvalDir)
     allData = struct();
     allDir = dir(nFoldEvalDir);
     allDataIdx = 1;
+    assert(length(varargin)<=1,'Only one additional argument can be processed');
+    bSelectDataOnly = false;
+    if(length(varargin) == 1)
+        bSelectDataOnly = true;
+        selectData = varargin{1};
+    end
     for i=1:length(allDir)
         nFoldDataTune = struct();
         nFoldDataEval = struct();
         nFoldDataBoth = struct();
         if(strcmp(allDir(i).name(1),'.'))
             continue;
+        end
+        if(bSelectDataOnly)
+            if(~ismember(allDir(i).name,selectData))
+                continue;
+            end
         end
         filesInDir = dir([nFoldEvalDir '/' allDir(i).name]); 
         for k=1:length(filesInDir)
