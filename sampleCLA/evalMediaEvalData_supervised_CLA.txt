@@ -1,0 +1,19 @@
+--method All --estimation supervised --saveDir /Users/aashish/dev/java/crwdQA/crowdData/nFoldSets/nFoldSet_10/mediaEval1Q1/ --loadDir /Users/aashish/dev/java/crwdQA/crowdData/nFoldSets/nFoldSet_10/mediaEval1Q1/
+
+--method All --estimation supervised --saveDir /Users/aashish/dev/java/crwdQA/crowdData/nFoldSets/nFoldSet_20/mediaEval1Q1/ --loadDir /Users/aashish/dev/java/crwdQA/crowdData/nFoldSets/nFoldSet_20/mediaEval1Q1/
+
+--method All --estimation supervised --saveDir /Users/aashish/dev/java/crwdQA/crowdData/nFoldSets/nFoldSet_50/mediaEval1Q1/ --loadDir /Users/aashish/dev/java/crwdQA/crowdData/nFoldSets/nFoldSet_50/mediaEval1Q1/
+
+--method All --estimation supervised --saveDir /Users/aashish/dev/java/crwdQA/crowdData/nFoldSets/nFoldSet_80/mediaEval1Q1/ --loadDir /Users/aashish/dev/java/crwdQA/crowdData/nFoldSets/nFoldSet_80/mediaEval1Q1/
+
+--method All --estimation supervised --saveDir /Users/aashish/dev/java/crwdQA/crowdData/nFoldSets/nFoldSet_90/mediaEval1Q1/ --loadDir /Users/aashish/dev/java/crwdQA/crowdData/nFoldSets/nFoldSet_90/mediaEval1Q1/
+
+--method All --estimation supervised --saveDir /Users/aashish/dev/java/crwdQA/crowdData/nFoldSets/nFoldSet_10/mediaEval1Q2/ --loadDir /Users/aashish/dev/java/crwdQA/crowdData/nFoldSets/nFoldSet_10/mediaEval1Q2/
+
+--method All --estimation supervised --saveDir /Users/aashish/dev/java/crwdQA/crowdData/nFoldSets/nFoldSet_20/mediaEval1Q2/ --loadDir /Users/aashish/dev/java/crwdQA/crowdData/nFoldSets/nFoldSet_20/mediaEval1Q2/
+
+--method All --estimation supervised --saveDir /Users/aashish/dev/java/crwdQA/crowdData/nFoldSets/nFoldSet_50/mediaEval1Q2/ --loadDir /Users/aashish/dev/java/crwdQA/crowdData/nFoldSets/nFoldSet_50/mediaEval1Q2/
+
+--method All --estimation supervised --saveDir /Users/aashish/dev/java/crwdQA/crowdData/nFoldSets/nFoldSet_80/mediaEval1Q2/ --loadDir /Users/aashish/dev/java/crwdQA/crowdData/nFoldSets/nFoldSet_80/mediaEval1Q2/
+
+--method All --estimation supervised --saveDir /Users/aashish/dev/java/crwdQA/crowdData/nFoldSets/nFoldSet_90/mediaEval1Q2/ --loadDir /Users/aashish/dev/java/crwdQA/crowdData/nFoldSets/nFoldSet_90/mediaEval1Q2/

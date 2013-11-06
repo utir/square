@@ -1,0 +1,89 @@
+--method All --estimation semisupervised --saveDir /Users/aashish/dev/java/crwdQA/crowdData/nFoldSets/nFoldSet_10/BarzanMozafari/ --loadDir /Users/aashish/dev/java/crwdQA/crowdData/nFoldSets/nFoldSet_10/BarzanMozafari/
+
+--method All --estimation semisupervised --saveDir /Users/aashish/dev/java/crwdQA/crowdData/nFoldSets/nFoldSet_20/BarzanMozafari/ --loadDir /Users/aashish/dev/java/crwdQA/crowdData/nFoldSets/nFoldSet_20/BarzanMozafari/
+
+--method All --estimation semisupervised --saveDir /Users/aashish/dev/java/crwdQA/crowdData/nFoldSets/nFoldSet_50/BarzanMozafari/ --loadDir /Users/aashish/dev/java/crwdQA/crowdData/nFoldSets/nFoldSet_50/BarzanMozafari/
+
+--method All --estimation semisupervised --saveDir /Users/aashish/dev/java/crwdQA/crowdData/nFoldSets/nFoldSet_80/BarzanMozafari/ --loadDir /Users/aashish/dev/java/crwdQA/crowdData/nFoldSets/nFoldSet_80/BarzanMozafari/
+
+--method All --estimation semisupervised --saveDir /Users/aashish/dev/java/crwdQA/crowdData/nFoldSets/nFoldSet_90/BarzanMozafari/ --loadDir /Users/aashish/dev/java/crwdQA/crowdData/nFoldSets/nFoldSet_90/BarzanMozafari/
+
+--method All --estimation semisupervised --saveDir /Users/aashish/dev/java/crwdQA/crowdData/nFoldSets/nFoldSet_10/HyunCatherines_Binary/ --loadDir /Users/aashish/dev/java/crwdQA/crowdData/nFoldSets/nFoldSet_10/HyunCatherines_Binary/
+
+--method All --estimation semisupervised --saveDir /Users/aashish/dev/java/crwdQA/crowdData/nFoldSets/nFoldSet_20/HyunCatherines_Binary/ --loadDir /Users/aashish/dev/java/crwdQA/crowdData/nFoldSets/nFoldSet_20/HyunCatherines_Binary/
+
+--method All --estimation semisupervised --saveDir /Users/aashish/dev/java/crwdQA/crowdData/nFoldSets/nFoldSet_50/HyunCatherines_Binary/ --loadDir /Users/aashish/dev/java/crwdQA/crowdData/nFoldSets/nFoldSet_50/HyunCatherines_Binary/
+
+--method All --estimation semisupervised --saveDir /Users/aashish/dev/java/crwdQA/crowdData/nFoldSets/nFoldSet_80/HyunCatherines_Binary/ --loadDir /Users/aashish/dev/java/crwdQA/crowdData/nFoldSets/nFoldSet_80/HyunCatherines_Binary/
+
+--method All --estimation semisupervised --saveDir /Users/aashish/dev/java/crwdQA/crowdData/nFoldSets/nFoldSet_90/HyunCatherines_Binary/ --loadDir /Users/aashish/dev/java/crwdQA/crowdData/nFoldSets/nFoldSet_90/HyunCatherines_Binary/
+
+--method All --estimation semisupervised --saveDir /Users/aashish/dev/java/crwdQA/crowdData/nFoldSets/nFoldSet_10/rteStandardized/ --loadDir /Users/aashish/dev/java/crwdQA/crowdData/nFoldSets/nFoldSet_10/rteStandardized/
+
+--method All --estimation semisupervised --saveDir /Users/aashish/dev/java/crwdQA/crowdData/nFoldSets/nFoldSet_20/rteStandardized/ --loadDir /Users/aashish/dev/java/crwdQA/crowdData/nFoldSets/nFoldSet_20/rteStandardized/
+
+--method All --estimation semisupervised --saveDir /Users/aashish/dev/java/crwdQA/crowdData/nFoldSets/nFoldSet_50/rteStandardized/ --loadDir /Users/aashish/dev/java/crwdQA/crowdData/nFoldSets/nFoldSet_50/rteStandardized/
+
+--method All --estimation semisupervised --saveDir /Users/aashish/dev/java/crwdQA/crowdData/nFoldSets/nFoldSet_80/rteStandardized/ --loadDir /Users/aashish/dev/java/crwdQA/crowdData/nFoldSets/nFoldSet_80/rteStandardized/
+
+--method All --estimation semisupervised --saveDir /Users/aashish/dev/java/crwdQA/crowdData/nFoldSets/nFoldSet_90/rteStandardized/ --loadDir /Users/aashish/dev/java/crwdQA/crowdData/nFoldSets/nFoldSet_90/rteStandardized/
+
+--method All --estimation semisupervised --saveDir /Users/aashish/dev/java/crwdQA/crowdData/nFoldSets/nFoldSet_10/SpamCF/ --loadDir /Users/aashish/dev/java/crwdQA/crowdData/nFoldSets/nFoldSet_10/SpamCF/
+
+--method All --estimation semisupervised --saveDir /Users/aashish/dev/java/crwdQA/crowdData/nFoldSets/nFoldSet_20/SpamCF/ --loadDir /Users/aashish/dev/java/crwdQA/crowdData/nFoldSets/nFoldSet_20/SpamCF/
+
+--method All --estimation semisupervised --saveDir /Users/aashish/dev/java/crwdQA/crowdData/nFoldSets/nFoldSet_50/SpamCF/ --loadDir /Users/aashish/dev/java/crwdQA/crowdData/nFoldSets/nFoldSet_50/SpamCF/
+
+--method All --estimation semisupervised --saveDir /Users/aashish/dev/java/crwdQA/crowdData/nFoldSets/nFoldSet_80/SpamCF/ --loadDir /Users/aashish/dev/java/crwdQA/crowdData/nFoldSets/nFoldSet_80/SpamCF/
+
+--method All --estimation semisupervised --saveDir /Users/aashish/dev/java/crwdQA/crowdData/nFoldSets/nFoldSet_90/SpamCF/ --loadDir /Users/aashish/dev/java/crwdQA/crowdData/nFoldSets/nFoldSet_90/SpamCF/
+
+--method All --estimation semisupervised --saveDir /Users/aashish/dev/java/crwdQA/crowdData/nFoldSets/nFoldSet_10/tempStandardized/ --loadDir /Users/aashish/dev/java/crwdQA/crowdData/nFoldSets/nFoldSet_10/tempStandardized/
+
+--method All --estimation semisupervised --saveDir /Users/aashish/dev/java/crwdQA/crowdData/nFoldSets/nFoldSet_20/tempStandardized/ --loadDir /Users/aashish/dev/java/crwdQA/crowdData/nFoldSets/nFoldSet_20/tempStandardized/
+
+--method All --estimation semisupervised --saveDir /Users/aashish/dev/java/crwdQA/crowdData/nFoldSets/nFoldSet_50/tempStandardized/ --loadDir /Users/aashish/dev/java/crwdQA/crowdData/nFoldSets/nFoldSet_50/tempStandardized/
+
+--method All --estimation semisupervised --saveDir /Users/aashish/dev/java/crwdQA/crowdData/nFoldSets/nFoldSet_80/tempStandardized/ --loadDir /Users/aashish/dev/java/crwdQA/crowdData/nFoldSets/nFoldSet_80/tempStandardized/
+
+--method All --estimation semisupervised --saveDir /Users/aashish/dev/java/crwdQA/crowdData/nFoldSets/nFoldSet_90/tempStandardized/ --loadDir /Users/aashish/dev/java/crwdQA/crowdData/nFoldSets/nFoldSet_90/tempStandardized/
+
+--method All --estimation semisupervised --saveDir /Users/aashish/dev/java/crwdQA/crowdData/nFoldSets/nFoldSet_10/trec2011Task2/ --loadDir /Users/aashish/dev/java/crwdQA/crowdData/nFoldSets/nFoldSet_10/trec2011Task2/
+
+--method All --estimation semisupervised --saveDir /Users/aashish/dev/java/crwdQA/crowdData/nFoldSets/nFoldSet_20/trec2011Task2/ --loadDir /Users/aashish/dev/java/crwdQA/crowdData/nFoldSets/nFoldSet_20/trec2011Task2/
+
+--method All --estimation semisupervised --saveDir /Users/aashish/dev/java/crwdQA/crowdData/nFoldSets/nFoldSet_50/trec2011Task2/ --loadDir /Users/aashish/dev/java/crwdQA/crowdData/nFoldSets/nFoldSet_50/trec2011Task2/
+
+--method All --estimation semisupervised --saveDir /Users/aashish/dev/java/crwdQA/crowdData/nFoldSets/nFoldSet_80/trec2011Task2/ --loadDir /Users/aashish/dev/java/crwdQA/crowdData/nFoldSets/nFoldSet_80/trec2011Task2/
+
+--method All --estimation semisupervised --saveDir /Users/aashish/dev/java/crwdQA/crowdData/nFoldSets/nFoldSet_90/trec2011Task2/ --loadDir /Users/aashish/dev/java/crwdQA/crowdData/nFoldSets/nFoldSet_90/trec2011Task2/
+
+--method All --estimation semisupervised --saveDir /Users/aashish/dev/java/crwdQA/crowdData/nFoldSets/nFoldSet_10/WaterBird/ --loadDir /Users/aashish/dev/java/crwdQA/crowdData/nFoldSets/nFoldSet_10/WaterBird/
+
+--method All --estimation semisupervised --saveDir /Users/aashish/dev/java/crwdQA/crowdData/nFoldSets/nFoldSet_20/WaterBird/ --loadDir /Users/aashish/dev/java/crwdQA/crowdData/nFoldSets/nFoldSet_20/WaterBird/
+
+--method All --estimation semisupervised --saveDir /Users/aashish/dev/java/crwdQA/crowdData/nFoldSets/nFoldSet_50/WaterBird/ --loadDir /Users/aashish/dev/java/crwdQA/crowdData/nFoldSets/nFoldSet_50/WaterBird/
+
+--method All --estimation semisupervised --saveDir /Users/aashish/dev/java/crwdQA/crowdData/nFoldSets/nFoldSet_80/WaterBird/ --loadDir /Users/aashish/dev/java/crwdQA/crowdData/nFoldSets/nFoldSet_80/WaterBird/
+
+--method All --estimation semisupervised --saveDir /Users/aashish/dev/java/crwdQA/crowdData/nFoldSets/nFoldSet_90/WaterBird/ --loadDir /Users/aashish/dev/java/crwdQA/crowdData/nFoldSets/nFoldSet_90/WaterBird/
+
+--method All --estimation semisupervised --saveDir /Users/aashish/dev/java/crwdQA/crowdData/nFoldSets/nFoldSet_10/wsdStandardized_Binary/ --loadDir /Users/aashish/dev/java/crwdQA/crowdData/nFoldSets/nFoldSet_10/wsdStandardized_Binary/
+
+--method All --estimation semisupervised --saveDir /Users/aashish/dev/java/crwdQA/crowdData/nFoldSets/nFoldSet_20/wsdStandardized_Binary/ --loadDir /Users/aashish/dev/java/crwdQA/crowdData/nFoldSets/nFoldSet_20/wsdStandardized_Binary/
+
+--method All --estimation semisupervised --saveDir /Users/aashish/dev/java/crwdQA/crowdData/nFoldSets/nFoldSet_50/wsdStandardized_Binary/ --loadDir /Users/aashish/dev/java/crwdQA/crowdData/nFoldSets/nFoldSet_50/wsdStandardized_Binary/
+
+--method All --estimation semisupervised --saveDir /Users/aashish/dev/java/crwdQA/crowdData/nFoldSets/nFoldSet_80/wsdStandardized_Binary/ --loadDir /Users/aashish/dev/java/crwdQA/crowdData/nFoldSets/nFoldSet_80/wsdStandardized_Binary/
+
+--method All --estimation semisupervised --saveDir /Users/aashish/dev/java/crwdQA/crowdData/nFoldSets/nFoldSet_90/wsdStandardized_Binary/ --loadDir /Users/aashish/dev/java/crwdQA/crowdData/nFoldSets/nFoldSet_90/wsdStandardized_Binary/
+
+--method All --estimation semisupervised --saveDir /Users/aashish/dev/java/crwdQA/crowdData/nFoldSets/nFoldSet_10/WVSCM/ --loadDir /Users/aashish/dev/java/crwdQA/crowdData/nFoldSets/nFoldSet_10/WVSCM/
+
+--method All --estimation semisupervised --saveDir /Users/aashish/dev/java/crwdQA/crowdData/nFoldSets/nFoldSet_20/WVSCM/ --loadDir /Users/aashish/dev/java/crwdQA/crowdData/nFoldSets/nFoldSet_20/WVSCM/
+
+--method All --estimation semisupervised --saveDir /Users/aashish/dev/java/crwdQA/crowdData/nFoldSets/nFoldSet_50/WVSCM/ --loadDir /Users/aashish/dev/java/crwdQA/crowdData/nFoldSets/nFoldSet_50/WVSCM/
+
+--method All --estimation semisupervised --saveDir /Users/aashish/dev/java/crwdQA/crowdData/nFoldSets/nFoldSet_80/WVSCM/ --loadDir /Users/aashish/dev/java/crwdQA/crowdData/nFoldSets/nFoldSet_80/WVSCM/
+
+--method All --estimation semisupervised --saveDir /Users/aashish/dev/java/crwdQA/crowdData/nFoldSets/nFoldSet_90/WVSCM/ --loadDir /Users/aashish/dev/java/crwdQA/crowdData/nFoldSets/nFoldSet_90/WVSCM/
