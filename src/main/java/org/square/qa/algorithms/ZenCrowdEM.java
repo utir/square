@@ -79,7 +79,7 @@ public class ZenCrowdEM<TypeWID,TypeQ,TypeR> {
 	 * @param loadFromModel is a boolean indication if model already exists
 	 */
 	public ZenCrowdEM(Models<TypeWID,TypeQ,TypeR>.ZenModel model, boolean loadFromModel){
-		log.assertLog(loadFromModel == true, "Required to load from model");
+		if (!(loadFromModel == true)) log.error("Required to load from model");
 		assert loadFromModel == true:"Required to load from model";
 		this.currentModel = model;
 		this.workersMap = model.getWorkersMap();

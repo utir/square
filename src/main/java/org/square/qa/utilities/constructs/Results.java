@@ -42,7 +42,7 @@ public class Results<TypeQ,TypeR> {
 	 */
 	public void setGold(Map<TypeQ,TypeR> gold){
 		log.debug("Setting gold...");
-		log.assertLog(categToInt!=null,"Result Vector not computed.");
+		if (!(categToInt!=null)) log.error("Result Vector not computed.");
 		assert categToInt!=null:"Result Vector not computed.";
 		DoubleMatrix indicator = DoubleMatrix.zeros(sortedQuestions.size());
 		DoubleMatrix goldVec = DoubleMatrix.zeros(sortedQuestions.size());
@@ -60,7 +60,7 @@ public class Results<TypeQ,TypeR> {
 	 */
 	public void setTune(Map<TypeQ,TypeR> tuneSet){
 		log.debug("Setting tune set...");
-		log.assertLog(categToInt!=null,"Result Vector not computed.");
+		if (!(categToInt!=null)) log.error("Result Vector not computed.");
 		assert categToInt!=null:"Result Vector not computed.";
 		DoubleMatrix indicator = DoubleMatrix.zeros(sortedQuestions.size());
 		DoubleMatrix tuneVec = DoubleMatrix.zeros(sortedQuestions.size());
@@ -78,7 +78,7 @@ public class Results<TypeQ,TypeR> {
 	 */
 	public void setGroundTruth(Map<TypeQ,TypeR> groundTruth){
 		log.debug("Setting ground truth...");
-		log.assertLog(categToInt!=null,"Result Vector not computed.");
+		if (!(categToInt!=null)) log.error("Result Vector not computed.");
 		assert categToInt!=null:"Result Vector not computed.";
 		DoubleMatrix indicator = DoubleMatrix.zeros(sortedQuestions.size());
 		DoubleMatrix gtVec = DoubleMatrix.zeros(sortedQuestions.size());
@@ -107,7 +107,7 @@ public class Results<TypeQ,TypeR> {
 	 * @return comparable results as a list of pairs with response and probabilities -- corresponding to sorted questions 
 	 */
 	public List<Pair<TypeR,Double> > getComparableResults(){
-		log.assertLog(sortedRePrPairs!=null, "Attempted to access null vector.");
+		if (!(sortedRePrPairs!=null)) log.error("Attempted to access null vector.");
 		assert sortedRePrPairs!=null:"Attempted to access null vector.";
 		return sortedRePrPairs;}
 	
@@ -116,7 +116,7 @@ public class Results<TypeQ,TypeR> {
 	 */
 	public void computeComparableResultVector(){
 		log.info("Computing comparable result vector...");
-		log.assertLog(sortedRePrPairs!=null, "Attempted to compute results vector before results.");
+		if (!(sortedRePrPairs!=null)) log.error("Attempted to compute results vector before results.");
 		assert sortedRePrPairs!=null:"Attempted to compute results vector before results.";
 		categToInt = new HashMap<TypeR,Integer>();
 		resultVector = DoubleMatrix.zeros(sortedQuestions.size());
@@ -140,7 +140,7 @@ public class Results<TypeQ,TypeR> {
 	 * @return a DoubleMatrix with results as a vector 
 	 */
 	public DoubleMatrix getComparableResultVector(){
-		log.assertLog(resultVector!=null, "Attempted to access null vector.");
+		if (!(resultVector!=null)) log.error("Attempted to access null vector.");
 		assert resultVector!=null:"Attempted to access null vector.";
 		return resultVector;
 	}
@@ -150,7 +150,7 @@ public class Results<TypeQ,TypeR> {
 	 * @return result string
 	 */
 	public String printComparableResults(boolean newline) {
-		log.assertLog(resultVector!=null, "Attempted to access null vector.");
+		if (!(resultVector!=null)) log.error("Attempted to access null vector.");
 		String outString = "";
 		int i = 0;
 		for(TypeQ question:sortedQuestions){
@@ -196,7 +196,7 @@ public class Results<TypeQ,TypeR> {
 	@SuppressWarnings("unchecked")
 	public void computeMetrics(boolean tune,boolean supervised){
 		if(supervised){
-			log.assertLog(goldVector!=null, "Supervised data not available");
+			if (!(goldVector!=null)) log.error("Supervised data not available");
 			assert goldVector!=null:"Supervised data not available";}
 		metrics = new Metrics(this.getCategories());
 		if(supervised){
@@ -216,6 +216,6 @@ public class Results<TypeQ,TypeR> {
 	 * @return Metrics object with computed metrics
 	 */
 	public Metrics getMetrics(){
-		log.assertLog(metrics!=null, "Metrics not computed");
+		if (!(metrics!=null)) log.error("Metrics not computed");
 		assert metrics!=null:"Metrics not computed";
 		return metrics;}}

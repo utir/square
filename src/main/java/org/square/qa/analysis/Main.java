@@ -64,7 +64,7 @@ final class Main {
 		  
 		  while (argIndex < args.length && args[argIndex].startsWith("--")){
 			  if(args[argIndex].equalsIgnoreCase("--responses")){
-				  log.assertLog(minReq == false,"Load path defined!");
+				  if (!(minReq == false)) log.error("Load path defined!");
 				  assert minReq == false:"Load path defined!";
 				
 				  responsesFile = args[++argIndex];
@@ -118,7 +118,7 @@ final class Main {
 				  outDir = new File(args[++argIndex]);
 				  log.info("Saving files in: " + outDir);}
 			  if(args[argIndex].equalsIgnoreCase("--loadDir")){
-				  log.assertLog(minReq == false,"Worker Responses defined! Loading will overwrite");
+				  if (!(minReq == false)) log.error("Worker Responses defined! Loading will overwrite");
 				  assert minReq == false:"Worker Responses defined! Loading will overwrite";
 				  minReq = true;
 				  loadDir = new File(args[++argIndex]);
@@ -371,7 +371,7 @@ final class Main {
 //		PropertyConfigurator.configure(Main.class.getClassLoader().getResource("log4j.properties"));
 		
 		PropertyConfigurator.configure("/Users/aashish/dev/java/crwdQA/crowdQA_Algorithms/src/main/resources/log4j.properties");
-		log.assertLog(args.length != 0, "Usage: org.square.qa.analysis.Main --responses [responsesFile] --category [categoriesFile] --gold [goldFile] --groundTruth [groundTruthFile] --categoryPrior [categoryPriorFile] --numIteration [numIterations] --method <Majority|Bayes|Raykar|Zen|All> --nfold [n]\nRequired Parameters: --responses --category\nOptional usage(specify file with args): --file [file]");
+		if (!(args.length != 0)) log.error("Usage: org.square.qa.analysis.Main --responses [responsesFile] --category [categoriesFile] --gold [goldFile] --groundTruth [groundTruthFile] --categoryPrior [categoryPriorFile] --numIteration [numIterations] --method <Majority|Bayes|Raykar|Zen|All> --nfold [n]\nRequired Parameters: --responses --category\nOptional usage(specify file with args): --file [file]");
 		assert args.length != 0 : "Usage: org.square.qa.analysis.Main --responses [responsesFile] --category [categoriesFile] --gold [goldFile] --groundTruth [groundTruthFile] --categoryPrior [categoryPriorFile] --numIteration [numIterations] --method <Majority|Bayes|Raykar|Zen|All> --nfold [n]\nRequired Parameters: --responses --category\nOptional usage(specify file with args): --file [file]";
 		
 		boolean usingFile = false;

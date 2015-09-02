@@ -108,7 +108,7 @@ public class GeneralUtilsParameterized<TypeWID,TypeQ,TypeR> {
 	 * @throws FileNotFoundException
 	 */
 	public void printNumberedResponses(Map<TypeWID,workersDataStruct<TypeQ,TypeR> > workersMap, File file) throws FileNotFoundException{
-		log.assertLog(GeneralUtils.nFoldSet.categToInt != null && GeneralUtils.nFoldSet.workerToInt != null && GeneralUtils.nFoldSet.questionToInt != null, "Category to Integer Maps Not Defined");
+		if (!(GeneralUtils.nFoldSet.categToInt != null && GeneralUtils.nFoldSet.workerToInt != null && GeneralUtils.nFoldSet.questionToInt != null)) log.error("Category to Integer Maps Not Defined");
 		assert GeneralUtils.nFoldSet.categToInt != null && GeneralUtils.nFoldSet.workerToInt != null && GeneralUtils.nFoldSet.questionToInt != null:"Category to Integer Maps Not Defined";
 		
 		PrintWriter out = new PrintWriter(file);
@@ -135,7 +135,7 @@ public class GeneralUtilsParameterized<TypeWID,TypeQ,TypeR> {
 	 * @throws FileNotFoundException
 	 */
 	public void printNumberedGT(Map<TypeQ,TypeR> gt, File file) throws FileNotFoundException{
-		log.assertLog(GeneralUtils.nFoldSet.categToInt != null && GeneralUtils.nFoldSet.questionToInt != null, "Category to Integer Map Not Defined");
+		if (!(GeneralUtils.nFoldSet.categToInt != null && GeneralUtils.nFoldSet.questionToInt != null)) log.error("Category to Integer Map Not Defined");
 		assert GeneralUtils.nFoldSet.categToInt != null && GeneralUtils.nFoldSet.questionToInt != null:"Category to Integer Map Not Defined";
 		PrintWriter out = new PrintWriter(file);
 		boolean first = true;
@@ -169,7 +169,7 @@ public class GeneralUtilsParameterized<TypeWID,TypeQ,TypeR> {
 	 * @throws FileNotFoundException
 	 */
 	public void printMapFileRI(Map<TypeR,Integer> responseToInt, File file) throws FileNotFoundException{
-		log.assertLog(GeneralUtils.nFoldSet.categToInt != null, "Category to Integer Map Not Defined");
+		if (!(GeneralUtils.nFoldSet.categToInt != null)) log.error("Category to Integer Map Not Defined");
 		assert GeneralUtils.nFoldSet.categToInt != null:"Category to Integer Map Not Defined";
 		PrintWriter out = new PrintWriter(file);
 		boolean first = true;
@@ -190,7 +190,7 @@ public class GeneralUtilsParameterized<TypeWID,TypeQ,TypeR> {
 	 * @throws FileNotFoundException
 	 */
 	public void printMapFileQI(Map<TypeQ,Integer> questionToInt, File file) throws FileNotFoundException{
-		log.assertLog(GeneralUtils.nFoldSet.questionToInt != null, "Question to Integer Map Not Defined");
+		if (!(GeneralUtils.nFoldSet.questionToInt != null)) log.error("Question to Integer Map Not Defined");
 		assert GeneralUtils.nFoldSet.questionToInt != null:"Question to Integer Map Not Defined";
 		PrintWriter out = new PrintWriter(file);
 		boolean first = true;
@@ -211,7 +211,7 @@ public class GeneralUtilsParameterized<TypeWID,TypeQ,TypeR> {
 	 * @throws FileNotFoundException
 	 */
 	public void printMapFileWI(Map<TypeWID,Integer> workerToInt,File file) throws FileNotFoundException{
-		log.assertLog(GeneralUtils.nFoldSet.workerToInt != null, "Worker to Integer Map Not Defined");
+		if (!(GeneralUtils.nFoldSet.workerToInt != null)) log.error("Worker to Integer Map Not Defined");
 		assert GeneralUtils.nFoldSet.workerToInt != null:"Worker to Integer Map Not Defined";
 		PrintWriter out = new PrintWriter(file);
 		boolean first = true;
@@ -232,7 +232,7 @@ public class GeneralUtilsParameterized<TypeWID,TypeQ,TypeR> {
 	 * @throws FileNotFoundException
 	 */
 	public void printStatistics(Map<TypeWID,workersDataStruct<TypeQ,TypeR> > workersMap, File... outDir) throws FileNotFoundException{
-		log.assertLog(outDir.length<2, "Only one output directory path accepted");
+		if (!(outDir.length<2)) log.error("Only one output directory path accepted");
 		assert outDir.length<2:"Only one output directory path accepted";
 		log.info("Computing worker statistics");
 		DoubleMatrix questionCounts = DoubleMatrix.zeros(workersMap.size());
