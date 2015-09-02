@@ -1,28 +1,18 @@
 package org.square.qa.analysis;
 
-import java.io.File;
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Scanner;
-import java.util.TreeSet;
-
-
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 import org.square.qa.algorithms.BayesGeneralized;
 import org.square.qa.algorithms.BinaryMapEstRY;
 import org.square.qa.algorithms.MajorityVoteGeneralized;
 import org.square.qa.algorithms.ZenCrowdEM;
-import org.square.qa.utilities.constructs.GeneralUtils;
-import org.square.qa.utilities.constructs.Models;
-import org.square.qa.utilities.constructs.Pair;
-import org.square.qa.utilities.constructs.Results;
-import org.square.qa.utilities.constructs.workersDataStruct;
+import org.square.qa.utilities.constructs.*;
 import org.square.qa.utilities.fileParsers.FileParserJStrings;
+
+import java.io.File;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.*;
 
 final class Main {
 	private String responsesFile;

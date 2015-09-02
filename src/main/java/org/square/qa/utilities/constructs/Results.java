@@ -1,15 +1,9 @@
 package org.square.qa.utilities.constructs;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.SortedSet;
-import java.util.TreeSet;
-
 import org.apache.log4j.Logger;
 import org.jblas.DoubleMatrix;
+
+import java.util.*;
 
 public class Results<TypeQ,TypeR> {
 	private static Logger log = Logger.getLogger(Results.class);

@@ -1,9 +1,9 @@
 package org.square.qa.utilities.constructs;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.List;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class workersDataStruct<TypeQ,TypeR> {
 	private Map<TypeQ,List<TypeR> > responses;

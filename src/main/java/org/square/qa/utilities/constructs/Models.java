@@ -1,13 +1,13 @@
 package org.square.qa.utilities.constructs;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.TreeSet;
-
 import org.apache.log4j.Logger;
 import org.jblas.DoubleMatrix;
 import org.square.qa.algorithms.AlgorithmInterface;
 import org.square.qa.algorithms.ExtendedAlgorithmInterface;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.TreeSet;
 
 
 class BaseModels<TypeWID,TypeQ,TypeR> implements AlgorithmInterface<TypeWID, TypeQ, TypeR> {

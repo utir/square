@@ -1,15 +1,14 @@
 package org.square.qa.algorithms;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Random;
-
-
 import org.apache.log4j.Logger;
 import org.square.qa.utilities.constructs.Models;
 import org.square.qa.utilities.constructs.Pair;
 import org.square.qa.utilities.constructs.workersDataStruct;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Random;
 
 public class MajorityVoteGeneralized<TypeWID,TypeQ,TypeR> {
 	private static Logger log = Logger.getLogger(MajorityVoteGeneralized.class);
