@@ -1,15 +1,15 @@
 package org.square.qa.algorithms;
 
+import org.apache.log4j.Logger;
+import org.jblas.DoubleMatrix;
+import org.square.qa.utilities.constructs.Models;
+import org.square.qa.utilities.constructs.Pair;
+import org.square.qa.utilities.constructs.workersDataStruct;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-
-import org.apache.log4j.Logger;
-import org.jblas.DoubleMatrix; 	
-import org.square.qa.utilities.constructs.Models;
-import org.square.qa.utilities.constructs.Pair;
-import org.square.qa.utilities.constructs.workersDataStruct;
 
 public class BinaryMapEstRY<TypeWID,TypeQ,TypeR> {
 	private static Logger log = Logger.getLogger(BinaryMapEstRY.class);

@@ -1,12 +1,12 @@
 package org.square.qa.utilities.fileParsers;
 
+import org.square.qa.utilities.constructs.workersDataStruct;
+
+import java.io.File;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
-import java.io.File;
-import java.io.IOException;
-
-import org.square.qa.utilities.constructs.workersDataStruct;
 
 public class FileParserSimple {
 	

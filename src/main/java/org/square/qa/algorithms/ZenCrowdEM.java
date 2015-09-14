@@ -1,17 +1,13 @@
 package org.square.qa.algorithms;
 
+import org.apache.log4j.Logger;
+import org.jblas.DoubleMatrix;
+import org.square.qa.utilities.constructs.*;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-
-import org.apache.log4j.Logger;
-import org.jblas.DoubleMatrix;
-import org.square.qa.utilities.constructs.GeneralUtils;
-import org.square.qa.utilities.constructs.GeneralUtilsParameterized;
-import org.square.qa.utilities.constructs.Models;
-import org.square.qa.utilities.constructs.Pair;
-import org.square.qa.utilities.constructs.workersDataStruct;
 
 
 //import org.apache.log4j.Logger;
@@ -79,7 +75,7 @@ public class ZenCrowdEM<TypeWID,TypeQ,TypeR> {
 	 * @param loadFromModel is a boolean indication if model already exists
 	 */
 	public ZenCrowdEM(Models<TypeWID,TypeQ,TypeR>.ZenModel model, boolean loadFromModel){
-		log.assertLog(loadFromModel == true, "Required to load from model");
+		if (!(loadFromModel == true)) log.error("Required to load from model");
 		assert loadFromModel == true:"Required to load from model";
 		this.currentModel = model;
 		this.workersMap = model.getWorkersMap();

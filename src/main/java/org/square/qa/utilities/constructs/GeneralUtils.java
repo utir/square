@@ -1,22 +1,13 @@
 package org.square.qa.utilities.constructs;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.SortedMap;
-import java.util.SortedSet;
-import java.util.TreeMap;
-import java.util.TreeSet;
-
 import org.apache.log4j.Logger;
 import org.jblas.DoubleMatrix;
 import org.square.qa.utilities.fileParsers.FileParserJStrings;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.*;
 
 
 @SuppressWarnings("unused")
@@ -82,7 +73,7 @@ public class GeneralUtils {
 	 * @param gold is the supervised/semi-supervised data to be excluded from metrics computation
 	 */
 	public static void computeMetrics(DoubleMatrix resultVector,Metrics metrics,Pair<DoubleMatrix,DoubleMatrix> groundTruth, Pair<DoubleMatrix,DoubleMatrix>... gold){
-		log.assertLog(gold.length<=1, "Only one additional parameter accepted");
+		if (!(gold.length<=1)) log.error("Only one additional parameter accepted");
 		assert gold.length<=1:"Only one additional parameter accepted";
 		boolean usedGold = false;
 		if(gold.length == 1)
@@ -229,7 +220,7 @@ public class GeneralUtils {
 	 * @throws FileNotFoundException
 	 */
 	public static void printStatistics(Map<String,workersDataStruct<String,String> > workersMap, File... outDir) throws FileNotFoundException{
-		log.assertLog(outDir.length<2, "Only one output directory path accepted");
+		if (!(outDir.length<2)) log.error("Only one output directory path accepted");
 		assert outDir.length<2:"Only one output directory path accepted";
 		if(outDir.length==1)
 			paramUtils.printStatistics(workersMap,outDir[0]);

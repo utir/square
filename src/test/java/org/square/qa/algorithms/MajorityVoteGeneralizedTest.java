@@ -1,9 +1,8 @@
 package org.square.qa.algorithms;
 
 
-import org.junit.Test;
-
 import junit.framework.TestCase;
+import org.junit.Test;
 
 
 public class MajorityVoteGeneralizedTest extends TestCase{

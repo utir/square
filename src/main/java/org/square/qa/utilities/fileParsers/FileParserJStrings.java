@@ -1,16 +1,12 @@
 package org.square.qa.utilities.fileParsers;
 
-import java.io.File;
-import java.io.IOException;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Scanner;
-import java.util.Set;
-
 import org.apache.log4j.Logger;
 import org.square.qa.utilities.constructs.GeneralUtils;
 import org.square.qa.utilities.constructs.workersDataStruct;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.*;
 
 public class FileParserJStrings {
 	private static Logger log = Logger.getLogger(FileParserJStrings.class);

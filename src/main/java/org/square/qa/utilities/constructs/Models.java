@@ -1,13 +1,13 @@
 package org.square.qa.utilities.constructs;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.TreeSet;
-
 import org.apache.log4j.Logger;
 import org.jblas.DoubleMatrix;
 import org.square.qa.algorithms.AlgorithmInterface;
 import org.square.qa.algorithms.ExtendedAlgorithmInterface;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.TreeSet;
 
 
 class BaseModels<TypeWID,TypeQ,TypeR> implements AlgorithmInterface<TypeWID, TypeQ, TypeR> {
@@ -21,7 +21,7 @@ class BaseModels<TypeWID,TypeQ,TypeR> implements AlgorithmInterface<TypeWID, Typ
 	protected Map<TypeQ, Pair<TypeR,Map<TypeR,Double> > > combinedEstLabels = null;
 	
 	public Map<TypeWID,workersDataStruct<TypeQ,TypeR> > getWorkersMap() {
-		log.assertLog(hasWorkersMap(), "Workers Map not initiliazed");
+		if (!(hasWorkersMap())) log.error("Workers Map not initiliazed");
 		assert hasWorkersMap():"Workers Map not initiliazed";
 		return workersMap;}
 	
@@ -29,7 +29,7 @@ class BaseModels<TypeWID,TypeQ,TypeR> implements AlgorithmInterface<TypeWID, Typ
 		this.workersMap = workersMap;}
 	
 	public TreeSet<TypeR> getResponseCategories() {
-		log.assertLog(hasResponseCategories(), "Response Categories not initiliazed");
+		if (!(hasResponseCategories())) log.error("Response Categories not initiliazed");
 		assert hasResponseCategories():"Response Categories not initiliazed";
 		return responseCategories;}
 	
@@ -37,7 +37,7 @@ class BaseModels<TypeWID,TypeQ,TypeR> implements AlgorithmInterface<TypeWID, Typ
 		this.responseCategories = responseCategories;}
 	
 	public Map<TypeWID,workersDataStruct<TypeQ,TypeR> > getWorkersMapTune() {
-		log.assertLog(hasWorkersMapTune(), "Workers Tune Map not initiliazed");
+		if (!(hasWorkersMapTune())) log.error("Workers Tune Map not initiliazed");
 		assert hasWorkersMapTune():"Workers Tune Map not initiliazed";
 		return workersMapTune;}
 	
@@ -45,7 +45,7 @@ class BaseModels<TypeWID,TypeQ,TypeR> implements AlgorithmInterface<TypeWID, Typ
 		this.workersMapTune = workersMapTune;}
 	
 	public Map<TypeWID,workersDataStruct<TypeQ,TypeR> > getWorkersMapGold() {
-		log.assertLog(hasWorkersMapGold(), "Workers Gold Map not initiliazed");
+		if (!(hasWorkersMapGold())) log.error("Workers Gold Map not initiliazed");
 		assert hasWorkersMapGold():"Workers Gold Map not initiliazed";
 		return workersMapGold;}
 	
@@ -53,7 +53,7 @@ class BaseModels<TypeWID,TypeQ,TypeR> implements AlgorithmInterface<TypeWID, Typ
 		this.workersMapGold = workersMapGold;}
 	
 	public Map<TypeQ,TypeR> getTuneGT() {
-		log.assertLog(hasTuneGT(), "GT Tune not initiliazed");
+		if (!(hasTuneGT())) log.error("GT Tune not initiliazed");
 		assert hasTuneGT():"GT Tune not initiliazed";
 		return tuneGT;}
 	
@@ -61,7 +61,7 @@ class BaseModels<TypeWID,TypeQ,TypeR> implements AlgorithmInterface<TypeWID, Typ
 		this.tuneGT = tuneGT;}
 	
 	public Map<TypeQ,TypeR> getGoldStandard() {
-		log.assertLog(hasGoldStandard(), "Gold Standard not initiliazed");
+		if (!(hasGoldStandard())) log.error("Gold Standard not initiliazed");
 		assert hasGoldStandard():"Gold Standard not initiliazed";
 		return goldStandard;}
 	
@@ -105,7 +105,7 @@ class BaseModels<TypeWID,TypeQ,TypeR> implements AlgorithmInterface<TypeWID, Typ
 			return false;}
 	
 	public Map<TypeQ, Pair<TypeR,Map<TypeR,Double> > > getCombinedEstLabels() {
-		log.assertLog(hasCombinedEstLabels(), "Combined Labels not initiliazed");
+		if (!(hasCombinedEstLabels())) log.error("Combined Labels not initiliazed");
 		assert hasCombinedEstLabels():"Combined Labels not initiliazed";
 		return combinedEstLabels;}
 	
@@ -249,7 +249,7 @@ public class Models<TypeWID,TypeQ,TypeR> {
 		 * @return a Map from workers to priors
 		 */
 		public Map<TypeWID, Pair<Pair<Double,Double>,Pair<Double,Double> > > getWorkerPriors() {
-			log.assertLog(hasWorkerPriors(), "Worker priors not initiliazed");
+			if (!(hasWorkerPriors())) log.error("Worker priors not initiliazed");
 			assert hasWorkerPriors():"Worker priors not initiliazed";
 			return workerPriors;}
 		
@@ -275,7 +275,7 @@ public class Models<TypeWID,TypeQ,TypeR> {
 		 * @return a Pair of Beta parameters
 		 */
 		public Pair<Double,Double> getPosClassBetaParam() {
-			log.assertLog(hasPosClassBetaParam(), "Class priors not initiliazed");
+			if (!(hasPosClassBetaParam())) log.error("Class priors not initiliazed");
 			assert hasPosClassBetaParam():"Class priors not initiliazed";
 			return posClassBetaParam;}
 		
@@ -291,7 +291,7 @@ public class Models<TypeWID,TypeQ,TypeR> {
 		 * @param workerPriors is a Map from workers to priors
 		 */
 		public void updateWorkerPriors(Map<TypeWID, Pair<Pair<Double,Double>,Pair<Double,Double> > > workerPriors){
-			log.assertLog(hasWorkerPriors(), "Worker priors not initiliazed");
+			if (!(hasWorkerPriors())) log.error("Worker priors not initiliazed");
 			assert hasWorkerPriors():"Worker priors not initiliazed";
 			for(TypeWID key:workerPriors.keySet()){
 				if(this.workerPriors.containsKey(key)){
@@ -312,7 +312,7 @@ public class Models<TypeWID,TypeQ,TypeR> {
 		 * @param posClassBetaParam is a Pair of Doubles holding positive class beta parameters
 		 */
 		public void updateClassPriorParam(Pair<Double,Double> posClassBetaParam){
-			log.assertLog(hasPosClassBetaParam(), "Class priors not initiliazed");
+			if (!(hasPosClassBetaParam())) log.error("Class priors not initiliazed");
 			assert hasPosClassBetaParam():"Class priors not initiliazed";
 			double thisFirst = this.posClassBetaParam.getFirst();
 			double otherFirst = posClassBetaParam.getFirst();
@@ -335,7 +335,7 @@ public class Models<TypeWID,TypeQ,TypeR> {
 		 * @return positive class
 		 */
 		public TypeR getPositiveClass() {
-			log.assertLog(hasPositiveClass(), "Positive Class Not Initialized");
+			if (!(hasPositiveClass())) log.error("Positive Class Not Initialized");
 			assert hasPositiveClass():"Positive Class Not Initialized";
 			return positiveClass;}
 		
@@ -405,7 +405,7 @@ public class Models<TypeWID,TypeQ,TypeR> {
 		 * @return worker reliability as a Map from workers to doubles
 		 */
 		public Map<TypeWID,Double> getWorkerReliabilityMap() {
-			log.assertLog(hasWorkerReliabilityMap(), "Worker Reliability Map not initiliazed");
+			if (!(hasWorkerReliabilityMap())) log.error("Worker Reliability Map not initiliazed");
 			assert hasWorkerReliabilityMap():"Worker Reliability Map not initiliazed";
 			return workerReliabilityMap;}
 		
@@ -437,7 +437,7 @@ public class Models<TypeWID,TypeQ,TypeR> {
 		 * @return worker priors as a Map from workers to priors
 		 */
 		public Map<TypeWID, Pair<Double,Double> > getWorkerPriors() {
-			log.assertLog(hasWorkerPriors(), "Worker priors not initiliazed");
+			if (!(hasWorkerPriors())) log.error("Worker priors not initiliazed");
 			assert hasWorkerPriors():"Worker priors not initiliazed";
 			return workerPriors;}
 		
@@ -463,7 +463,7 @@ public class Models<TypeWID,TypeQ,TypeR> {
 		 * @return class prior as a DoubleMatrix
 		 */
 		public DoubleMatrix getClassPriorParam() {
-			log.assertLog(hasClassPriorParam(), "Class priors not initiliazed");
+			if (!(hasClassPriorParam())) log.error("Class priors not initiliazed");
 			assert hasClassPriorParam():"Class priors not initiliazed";
 			return classPriorParam;}
 		
@@ -479,7 +479,7 @@ public class Models<TypeWID,TypeQ,TypeR> {
 		 * @param workerPriors is a Map from workers to priors
 		 */
 		public void updateWorkerPriors(Map<TypeWID, Pair<Double,Double> > workerPriors){
-			log.assertLog(hasWorkerPriors(), "Worker priors not initiliazed");
+			if (!(hasWorkerPriors())) log.error("Worker priors not initiliazed");
 			assert hasWorkerPriors():"Worker priors not initiliazed";
 			for(TypeWID key:workerPriors.keySet()){
 				if(this.workerPriors.containsKey(key)){
@@ -495,7 +495,7 @@ public class Models<TypeWID,TypeQ,TypeR> {
 		 * @param classPriorParam is a DoubleMatrix of class priors
 		 */
 		public void updateClassPriorParam(DoubleMatrix classPriorParam){
-			log.assertLog(hasClassPriorParam(), "Class priors not initiliazed");
+			if (!(hasClassPriorParam())) log.error("Class priors not initiliazed");
 			assert hasClassPriorParam():"Class priors not initiliazed";
 			this.classPriorParam.addi(classPriorParam).divi(2.0d);}}
 	
@@ -555,7 +555,7 @@ public class Models<TypeWID,TypeQ,TypeR> {
 		 * @return worker confusion maps -- Map from workers to confusion maps
 		 */
 		public Map<TypeWID,Map<TypeR,Map<TypeR,Double> > > getWorkerConfustionMaps() {
-			log.assertLog(hasWorkerConfusionMaps(), "Worker confusion maps not initiliazed");
+			if (!(hasWorkerConfusionMaps())) log.error("Worker confusion maps not initiliazed");
 			assert hasWorkerConfusionMaps():"Worker condusion maps not initiliazed";
 			return workerConfusionMaps;}
 		
@@ -602,7 +602,7 @@ public class Models<TypeWID,TypeQ,TypeR> {
 		 * @return double holding Laplacian alpha smoothing parameter
 		 */
 		public double getLapAlpha() {
-			log.assertLog(hasLapAlpha(), "Lap Alpha not initiliazed");
+			if (!(hasLapAlpha())) log.error("Lap Alpha not initiliazed");
 			assert hasLapAlpha():"Lap Alpha not initiliazed";
 			return lapAlpha;}
 		
@@ -628,7 +628,7 @@ public class Models<TypeWID,TypeQ,TypeR> {
 		 * @return double holding Laplacian beta smoothing parameter
 		 */
 		public double getLapBeta() {
-			log.assertLog(hasLapBeta(), "Lap Beta not initiliazed");
+			if (!(hasLapBeta())) log.error("Lap Beta not initiliazed");
 			assert hasLapBeta():"Lap Beta not initiliazed";
 			return lapBeta;}
 		
@@ -654,7 +654,7 @@ public class Models<TypeWID,TypeQ,TypeR> {
 		 * @return a Map from responses to confusion maps
 		 */
 		public Map<TypeR,Map<TypeR,Double> > getNewWorkerConfusion(){
-			log.assertLog(hasNewWorkerConfusion(),"New worker confusion not initialized");
+			if (!(hasNewWorkerConfusion())) log.error("New worker confusion not initialized");
 			assert hasNewWorkerConfusion():"New worker confusion not initialized";
 		
 			return newWorkerConfusionMap;}
@@ -670,7 +670,7 @@ public class Models<TypeWID,TypeQ,TypeR> {
 		 * Compute default worker confusion map
 		 */
 		public void computeDefaultNewWorkerConfusion(){
-			log.assertLog(hasResponseCategories(),"Response Categories not initialized");
+			if (!(hasResponseCategories())) log.error("Response Categories not initialized");
 			assert hasResponseCategories():"Response Categories not initialized";
 			newWorkerConfusionMap = new HashMap<TypeR, Map<TypeR,Double> >();
 			for(TypeR iter:responseCategories){
@@ -740,7 +740,7 @@ public class Models<TypeWID,TypeQ,TypeR> {
 		 * @return class priors as a Map from class categories to doubles
 		 */
 		public Map<TypeR,Double> getClassPriors(){
-			log.assertLog(hasClassPriors(), "Class Priors not Defined");
+			if (!(hasClassPriors())) log.error("Class Priors not Defined");
 			assert hasClassPriors():"Class Priors not Defined";
 			return classPriors;}
 		

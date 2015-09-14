@@ -1,7 +1,8 @@
 package org.square.qa.utilities.constructs;
 
-import java.util.List;
 import org.jblas.DoubleMatrix;
+
+import java.util.List;
 
 public class Metrics{
 	private double avgAccuracy;

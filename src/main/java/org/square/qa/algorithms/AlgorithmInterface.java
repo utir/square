@@ -1,10 +1,10 @@
 package org.square.qa.algorithms;
 
-import java.util.Map;
-import java.util.TreeSet;
-
 import org.square.qa.utilities.constructs.Pair;
 import org.square.qa.utilities.constructs.workersDataStruct;
+
+import java.util.Map;
+import java.util.TreeSet;
 
 
 public interface AlgorithmInterface<TypeWID,TypeQ,TypeR> {

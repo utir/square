@@ -1,29 +1,19 @@
 package org.square.qa.analysis;
 
-import java.io.File;
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Scanner;
-import java.util.TreeSet;
-
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 import org.square.qa.algorithms.BayesGeneralized;
 import org.square.qa.algorithms.BinaryMapEstRY;
 import org.square.qa.algorithms.MajorityVoteGeneralized;
 import org.square.qa.algorithms.ZenCrowdEM;
-import org.square.qa.utilities.constructs.GeneralUtils;
-import org.square.qa.utilities.constructs.GeneralUtilsParameterized;
-import org.square.qa.utilities.constructs.Models;
-import org.square.qa.utilities.constructs.Pair;
-import org.square.qa.utilities.constructs.Results;
-import org.square.qa.utilities.constructs.workersDataStruct;
+import org.square.qa.utilities.constructs.*;
 import org.square.qa.utilities.constructs.GeneralUtils.nFoldSet;
 import org.square.qa.utilities.fileParsers.FileParserJStrings;
+
+import java.io.File;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.*;
 
 final class MainWOGT {
 	private String responsesFile;
@@ -59,7 +49,7 @@ final class MainWOGT {
 		  
 		  while (argIndex < args.length && args[argIndex].startsWith("--")){
 			  if(args[argIndex].equalsIgnoreCase("--responses")){
-				  log.assertLog(minReq == false,"Load path defined!");
+				  if (!(minReq == false)) log.error("Load path defined!");
 				  assert minReq == false:"Load path defined!";				
 				  responsesFile = args[++argIndex];
 				  minReq = true;
@@ -100,7 +90,7 @@ final class MainWOGT {
 				  log.info("Saving files in: " + outDir);}
 			  
 			  if(args[argIndex].equalsIgnoreCase("--loadDir")){
-				  log.assertLog(minReq == false,"Worker Responses defined! Loading will overwrite");
+				  if (!(minReq == false)) log.error("Worker Responses defined! Loading will overwrite");
 				  assert minReq == false:"Worker Responses defined! Loading will overwrite";
 				  minReq = true;
 				  loadDir = new File(args[++argIndex]);
@@ -302,7 +292,7 @@ final class MainWOGT {
 	public static void main(String... args) throws IOException {
 		
 		PropertyConfigurator.configure("/Users/aashish/dev/java/crwdQA/crowdQA_Algorithms/src/main/resources/log4j.properties");
-		log.assertLog(args.length != 0, "Usage: org.square.qa.analysis.Main --responses [responsesFile] --category [categoriesFile] --categoryPrior [categoryPriorFile] --numIteration [numIterations] --method <Majority|Bayes|Raykar|Zen|All> --nfold [n]\nRequired Parameters: --responses --category\nOptional usage(specify file with args): --file [file]");
+		if (!(args.length != 0)) log.error("Usage: org.square.qa.analysis.Main --responses [responsesFile] --category [categoriesFile] --categoryPrior [categoryPriorFile] --numIteration [numIterations] --method <Majority|Bayes|Raykar|Zen|All> --nfold [n]\nRequired Parameters: --responses --category\nOptional usage(specify file with args): --file [file]");
 		assert args.length != 0 : "Usage: org.square.qa.analysis.Main --responses [responsesFile] --category [categoriesFile] --categoryPrior [categoryPriorFile] --numIteration [numIterations] --method <Majority|Bayes|Raykar|Zen|All> --nfold [n]\nRequired Parameters: --responses --category\nOptional usage(specify file with args): --file [file]";
 		
 		boolean usingFile = false;
