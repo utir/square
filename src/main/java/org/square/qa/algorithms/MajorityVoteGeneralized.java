@@ -12,13 +12,13 @@ import java.util.Random;
 
 public class MajorityVoteGeneralized<TypeWID,TypeQ,TypeR> {
 	private static Logger log = Logger.getLogger(MajorityVoteGeneralized.class);
-	Models<TypeWID, TypeQ, TypeR>.MajorityModel currentModel;
+	Models.MajorityModel<TypeWID, TypeQ, TypeR> currentModel;
 	
 	/**
 	 * Constructor for MajorityVoteGeneralized
 	 * @param majorityModel model is of type MajorityModel from Models
 	 */
-	public MajorityVoteGeneralized(Models<TypeWID, TypeQ, TypeR>.MajorityModel majorityModel){
+	public MajorityVoteGeneralized(Models.MajorityModel<TypeWID, TypeQ, TypeR> majorityModel){
 		this.currentModel = majorityModel;
 	}
 	
@@ -26,7 +26,7 @@ public class MajorityVoteGeneralized<TypeWID,TypeQ,TypeR> {
 	 * Get MajorityModel
 	 * @return the current MajorityModel
 	 */
-	public Models<TypeWID, TypeQ, TypeR>.MajorityModel getCurrentModel(){
+	public Models.MajorityModel<TypeWID, TypeQ, TypeR> getCurrentModel(){
 		return currentModel;}
 	
 	/**

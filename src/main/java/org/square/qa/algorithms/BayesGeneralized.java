@@ -20,14 +20,14 @@ public class BayesGeneralized<TypeWID,TypeQ,TypeR> {
 	private double lapBeta;
 	private boolean loadFromModel;
 	
-	private Models<TypeWID,TypeQ,TypeR>.BayesModel currentModel;
+	private Models.BayesModel<TypeWID,TypeQ,TypeR> currentModel;
 	
 	/**
 	 * Constructor for BayesGeneralized
 	 * @param model is of type BayesModel from Models
 	 * @param loadFromModel is a boolean indication if model already exists
 	 */
-	public BayesGeneralized(Models<TypeWID,TypeQ,TypeR>.BayesModel model, boolean loadFromModel){
+	public BayesGeneralized(Models.BayesModel<TypeWID,TypeQ,TypeR> model, boolean loadFromModel){
 		this.currentModel = model;
 		this.loadFromModel = loadFromModel;
 		if(!loadFromModel){
@@ -38,7 +38,7 @@ public class BayesGeneralized<TypeWID,TypeQ,TypeR> {
 	 * Get BayesModel
 	 * @return the current BayesModel
 	 */
-	public Models<TypeWID,TypeQ,TypeR>.BayesModel getCurrentModel(){
+	public Models.BayesModel<TypeWID,TypeQ,TypeR> getCurrentModel(){
 		return currentModel;}
 	
 	private void estWorkerConfusion(){
@@ -193,7 +193,7 @@ public class BayesGeneralized<TypeWID,TypeQ,TypeR> {
 		return val;}
 	
 	private void computeMajorityResponses(){
-		Models<TypeWID,TypeQ,TypeR>.MajorityModel majorityModel = new Models<TypeWID, TypeQ, TypeR>().getMajorityModel();
+		Models.MajorityModel<TypeWID, TypeQ, TypeR> majorityModel = new Models<TypeWID, TypeQ, TypeR>().getMajorityModel();
 		majorityModel.setWorkersMap(currentModel.getWorkersMap());
 		majorityModel.setResponseCategories(currentModel.getResponseCategories());
 		MajorityVoteGeneralized<TypeWID, TypeQ, TypeR> majorityVoteAlgo = new MajorityVoteGeneralized<TypeWID, TypeQ, TypeR>(majorityModel);

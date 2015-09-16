@@ -40,13 +40,13 @@ public class BinaryMapEstRY<TypeWID,TypeQ,TypeR> {
 	private final double posClassMu = 0.6;
 	private final double posClassVar = 0.3;
 	
-	private Models<TypeWID,TypeQ,TypeR>.RaykarModel currentModel;
+	private Models.RaykarModel<TypeWID,TypeQ,TypeR> currentModel;
 	
 	/**
 	 * Constructor for BinaryMapEstRY
 	 * @param model is of type RaykarModel from Models
 	 */
-	public BinaryMapEstRY(Models<TypeWID,TypeQ,TypeR>.RaykarModel model){
+	public BinaryMapEstRY(Models.RaykarModel<TypeWID,TypeQ,TypeR> model){
 		//TODO:Initialize majority responses
 		this.currentModel = model;
 		this.workersMap = model.getWorkersMap();
@@ -304,7 +304,7 @@ public class BinaryMapEstRY<TypeWID,TypeQ,TypeR> {
 					muMat.put(questionIndexMap.get(key), 0.001d);}}}
 	
 	private Map<TypeQ,Pair<TypeR, Map<TypeR,Double> > > computeMajorityResponses(){
-		Models<TypeWID,TypeQ,TypeR>.MajorityModel majorityModel = new Models<TypeWID, TypeQ, TypeR>().getMajorityModel();
+		Models.MajorityModel<TypeWID, TypeQ, TypeR> majorityModel = new Models<TypeWID, TypeQ, TypeR>().getMajorityModel();
 		majorityModel.setWorkersMap(currentModel.getWorkersMap());
 		majorityModel.setResponseCategories(currentModel.getResponseCategories());
 		MajorityVoteGeneralized<TypeWID, TypeQ, TypeR> majorityVoteAlgo = new MajorityVoteGeneralized<TypeWID, TypeQ, TypeR>(majorityModel);
