@@ -125,17 +125,17 @@ public class Models<TypeWID,TypeQ,TypeR> {
 	 * 
 	 */
 	public Models(){
-		this.raykarModel = new RaykarModel();
-		this.rTestModel = new RaykarModel();
+		this.raykarModel = new RaykarModel<TypeWID,TypeQ,TypeR>();
+		this.rTestModel = new RaykarModel<TypeWID,TypeQ,TypeR>();
 		
-		this.zenModel = new ZenModel();
-		this.zTestModel = new ZenModel();
+		this.zenModel = new ZenModel<TypeWID,TypeQ,TypeR>();
+		this.zTestModel = new ZenModel<TypeWID,TypeQ,TypeR>();
 		
-		this.bayesModel = new BayesModel();
-		this.bTestModel = new BayesModel();
+		this.bayesModel = new BayesModel<TypeWID,TypeQ,TypeR>();
+		this.bTestModel = new BayesModel<TypeWID,TypeQ,TypeR>();
 		
-		this.majorityModel = new MajorityModel();
-		this.mTestModel = new MajorityModel();}
+		this.majorityModel = new MajorityModel<TypeWID, TypeQ, TypeR>();
+		this.mTestModel = new MajorityModel<TypeWID, TypeQ, TypeR>();}
 	
 	/**
 	 * Set workers responses for each model
@@ -219,7 +219,7 @@ public class Models<TypeWID,TypeQ,TypeR> {
 		mTestModel.setResponseCategories(responseCategories);}
 	
 //******************* START Raykar Model
-	public class RaykarModel extends BaseModels<TypeWID, TypeQ, TypeR> implements ExtendedAlgorithmInterface<TypeWID, TypeQ, TypeR>{
+	public static class RaykarModel<TypeWID,TypeQ,TypeR> extends BaseModels<TypeWID, TypeQ, TypeR> implements ExtendedAlgorithmInterface<TypeWID, TypeQ, TypeR>{
 		
 		private Map<TypeWID, Pair<Pair<Double,Double>,Pair<Double,Double> > > workerPriors = null;
 		private Pair<Double,Double> posClassBetaParam = null;
@@ -346,42 +346,42 @@ public class Models<TypeWID,TypeQ,TypeR> {
 		public void setPositiveClass(TypeR positiveClass) {
 			this.positiveClass = positiveClass;}}
 	
-	private RaykarModel rTestModel;
-	private RaykarModel raykarModel;
+	private RaykarModel<TypeWID,TypeQ,TypeR> rTestModel;
+	private RaykarModel<TypeWID,TypeQ,TypeR> raykarModel;
 	
 	/**
 	 * Get RaykarModel -- test configuration
 	 * @return RaykarModel from Models
 	 */
-	public RaykarModel getRaykarTestModel() {
+	public RaykarModel<TypeWID,TypeQ,TypeR> getRaykarTestModel() {
 		return rTestModel;}
 	
 	/**
 	 * Set RaykarModel -- test configuration
 	 * @param rTestModel is a RaykarModel from Models
 	 */
-	public void setRaykarTestModel(RaykarModel rTestModel) {
+	public void setRaykarTestModel(RaykarModel<TypeWID,TypeQ,TypeR> rTestModel) {
 		this.rTestModel = rTestModel;}
 	
 	/**
 	 * Get RaykarModel
 	 * @return RaykarModel
 	 */
-	public RaykarModel getRaykarModel() {
+	public RaykarModel<TypeWID,TypeQ,TypeR> getRaykarModel() {
 		return raykarModel;}
 	
 	/**
 	 * Set RaykarModel
 	 * @param raykarModel is a RaykarModel
 	 */
-	public void setRaykarModel(RaykarModel raykarModel) {
+	public void setRaykarModel(RaykarModel<TypeWID,TypeQ,TypeR> raykarModel) {
 		this.raykarModel = raykarModel;}
 	
 //******************* END Raykar Model
 	
 //******************* START Zen Crowd Model
 	
-	public class ZenModel extends BaseModels<TypeWID, TypeQ, TypeR> implements ExtendedAlgorithmInterface<TypeWID, TypeQ, TypeR>{
+	public static class ZenModel<TypeWID,TypeQ,TypeR> extends BaseModels<TypeWID, TypeQ, TypeR> implements ExtendedAlgorithmInterface<TypeWID, TypeQ, TypeR>{
 		
 		private Map<TypeWID,Double> workerReliabilityMap = null;
 		private Map<TypeWID, Pair<Double,Double> > workerPriors = null;
@@ -499,42 +499,42 @@ public class Models<TypeWID,TypeQ,TypeR> {
 			assert hasClassPriorParam():"Class priors not initiliazed";
 			this.classPriorParam.addi(classPriorParam).divi(2.0d);}}
 	
-	private ZenModel zTestModel;
-	private ZenModel zenModel;
+	private ZenModel<TypeWID,TypeQ,TypeR> zTestModel;
+	private ZenModel<TypeWID,TypeQ,TypeR> zenModel;
 	
 	/**
 	 * Get ZenModel -- test configuration
 	 * @return ZenModel
 	 */
-	public ZenModel getZenTestModel() {
+	public ZenModel<TypeWID,TypeQ,TypeR> getZenTestModel() {
 		return zTestModel;}
 	
 	/**
 	 * Set ZenModel -- test configuration
 	 * @param zTestModel is a ZenModel 
 	 */
-	public void setZenTestModel(ZenModel zTestModel) {
+	public void setZenTestModel(ZenModel<TypeWID,TypeQ,TypeR> zTestModel) {
 		this.zTestModel = zTestModel;}
 	
 	/**
 	 * Get ZenModel
 	 * @return ZenModel
 	 */
-	public ZenModel getZenModel() {
+	public ZenModel<TypeWID,TypeQ,TypeR> getZenModel() {
 		return zenModel;}
 	
 	/**
 	 * Set ZenModel
 	 * @param zenModel is a ZenModel
 	 */
-	public void setZenModel(ZenModel zenModel) {
+	public void setZenModel(ZenModel<TypeWID,TypeQ,TypeR> zenModel) {
 		this.zenModel = zenModel;}
 	
 //******************* END Zen Crowd Model	
 
 //******************* START Bayes Model
 	
-	public class BayesModel extends BaseModels<TypeWID, TypeQ, TypeR>{
+	public static class BayesModel<TypeWID,TypeQ,TypeR> extends BaseModels<TypeWID, TypeQ, TypeR>{
 		private Map<TypeWID, Map<TypeR,Map<TypeR,Double> > > workerConfusionMaps = null;
 		private double lapAlpha = -1;
 		private double lapBeta = -1;
@@ -679,42 +679,42 @@ public class Models<TypeWID,TypeQ,TypeR> {
 					tempMap.put(innerIter, 1.0d/(double)responseCategories.size());}
 				newWorkerConfusionMap.put(iter, tempMap);}}}
 	
-	private BayesModel bTestModel;
-	private BayesModel bayesModel;
+	private BayesModel<TypeWID,TypeQ,TypeR> bTestModel;
+	private BayesModel<TypeWID,TypeQ,TypeR> bayesModel;
 	
 	/**
 	 * Get BayesModel -- test configuration 
 	 * @return BayesModel
 	 */
-	public BayesModel getBayesTestModel() {
+	public BayesModel<TypeWID,TypeQ,TypeR> getBayesTestModel() {
 		return bTestModel;}
 	
 	/**
 	 * Set BayesModel -- test configuration
 	 * @param bTestModel is a BayesModel
 	 */
-	public void setBayesTestModel(BayesModel bTestModel) {
+	public void setBayesTestModel(BayesModel<TypeWID,TypeQ,TypeR> bTestModel) {
 		this.bTestModel = bTestModel;}
 	
 	/**
 	 * Get BayesModel
 	 * @return BayesModel
 	 */
-	public BayesModel getBayesModel() {
+	public BayesModel<TypeWID,TypeQ,TypeR> getBayesModel() {
 		return bayesModel;}
 	
 	/**
 	 * Set BayesModel
 	 * @param bayesModel is a BayesModel
 	 */
-	public void setBayesModel(BayesModel bayesModel) {
+	public void setBayesModel(BayesModel<TypeWID,TypeQ,TypeR> bayesModel) {
 		this.bayesModel = bayesModel;}
 	
 //******************* END Bayes Model	
 
 //******************* START Majority Vote Model
 	
-	public class MajorityModel extends BaseModels<TypeWID, TypeQ, TypeR> {
+	public static class MajorityModel<TypeWID, TypeQ, TypeR> extends BaseModels<TypeWID, TypeQ, TypeR> {
 		Map<TypeR,Double> classPriors = null;
 		
 		/**
@@ -754,35 +754,35 @@ public class Models<TypeWID,TypeQ,TypeR> {
 			else
 				return false;}}
 	
-	private MajorityModel mTestModel;
-	private MajorityModel majorityModel;
+	private MajorityModel<TypeWID, TypeQ, TypeR> mTestModel;
+	private MajorityModel<TypeWID, TypeQ, TypeR> majorityModel;
 	
 	/**
 	 * Get MajorityModel -- test configuration
 	 * @return MajorityModel
 	 */
-	public MajorityModel getMajorityTestModel() {
+	public MajorityModel<TypeWID, TypeQ, TypeR> getMajorityTestModel() {
 		return mTestModel;}
 	
 	/**
 	 * Set MajorityModel -- test configuration
 	 * @param mTestModel is a MajorityModel
 	 */
-	public void setMajorityTestModel(MajorityModel mTestModel) {
+	public void setMajorityTestModel(MajorityModel<TypeWID, TypeQ, TypeR> mTestModel) {
 		this.mTestModel = mTestModel;}
 	
 	/**
 	 * Get MajorityModel
 	 * @return MajorityModel
 	 */
-	public MajorityModel getMajorityModel() {
+	public MajorityModel<TypeWID, TypeQ, TypeR> getMajorityModel() {
 		return majorityModel;}
 	
 	/**
 	 * Set MajorityModel
 	 * @param majorityModel is a MajorityModel
 	 */
-	public void setMajorityModel(MajorityModel majorityModel) {
+	public void setMajorityModel(MajorityModel<TypeWID, TypeQ, TypeR> majorityModel) {
 		this.majorityModel = majorityModel;}	
 //******************* END Majority Vote Model
 }

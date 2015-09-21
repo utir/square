@@ -34,13 +34,13 @@ public class ZenCrowdEM<TypeWID,TypeQ,TypeR> {
 	private final double workerBetaParamMu = 0.7;
 	private final double workerBetaParamVar = 0.3;
 	
-	private Models<TypeWID,TypeQ,TypeR>.ZenModel currentModel;
+	private Models.ZenModel<TypeWID,TypeQ,TypeR> currentModel;
 	
 	/**
 	 * Constructor for ZenCrowdEM
 	 * @param model is of type ZenModel from Models
 	 */
-	public ZenCrowdEM(Models<TypeWID,TypeQ,TypeR>.ZenModel model){
+	public ZenCrowdEM(Models.ZenModel<TypeWID,TypeQ,TypeR> model){
 		this.currentModel = model;
 		this.workersMap = model.getWorkersMap();
 		this.responseCategories = model.getResponseCategories();
@@ -74,7 +74,7 @@ public class ZenCrowdEM<TypeWID,TypeQ,TypeR> {
 	 * @param model is of type ZenModel from Models
 	 * @param loadFromModel is a boolean indication if model already exists
 	 */
-	public ZenCrowdEM(Models<TypeWID,TypeQ,TypeR>.ZenModel model, boolean loadFromModel){
+	public ZenCrowdEM(Models.ZenModel<TypeWID,TypeQ,TypeR> model, boolean loadFromModel){
 		if (!(loadFromModel == true)) log.error("Required to load from model");
 		assert loadFromModel == true:"Required to load from model";
 		this.currentModel = model;
@@ -90,7 +90,7 @@ public class ZenCrowdEM<TypeWID,TypeQ,TypeR> {
 	 * Get ZenModel
 	 * @return the current ZenModel
 	 */
-	public Models<TypeWID,TypeQ,TypeR>.ZenModel getCurrentModel(){
+	public Models.ZenModel<TypeWID,TypeQ,TypeR> getCurrentModel(){
 		return currentModel;
 	}
 	
@@ -166,7 +166,7 @@ public class ZenCrowdEM<TypeWID,TypeQ,TypeR> {
 	}
 	
 	private Map<TypeQ,TypeR> computeMajorityResponses(){
-		Models<TypeWID,TypeQ,TypeR>.MajorityModel majorityModel = new Models<TypeWID, TypeQ, TypeR>().getMajorityModel();
+		Models.MajorityModel<TypeWID,TypeQ,TypeR> majorityModel = new Models<TypeWID, TypeQ, TypeR>().getMajorityModel();
 		majorityModel.setWorkersMap(currentModel.getWorkersMap());
 		majorityModel.setResponseCategories(currentModel.getResponseCategories());
 		MajorityVoteGeneralized<TypeWID, TypeQ, TypeR> majorityVoteAlgo = new MajorityVoteGeneralized<TypeWID, TypeQ, TypeR>(majorityModel);
