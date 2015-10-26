@@ -1,3 +1,9 @@
+Moved to [SQUARE-2.0] (https://github.com/utir/square-2.0.git)
+==============================================================
+
+**This repo is no longer maintainted** 
+
+
 Build and Run Instructions:
 -- Project conforms to a maven build.
 -- Run mvn install from the root directory.
