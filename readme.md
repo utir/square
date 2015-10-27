@@ -1,8 +1,4 @@
-Moved to [SQUARE-2.0] (https://github.com/utir/square-2.0.git)
-==============================================================
-
-**This repo is no longer maintainted** 
-
+**October 26, 2015: Version 2.0 of SQUARE now released! (new GIT repo to avoid impacting those using Version 1.0). See 2.0 page for details of what's new! -- [SQUARE-2.0] (https://github.com/utir/square-2.0.git)**.
 
 Build and Run Instructions:
 -- Project conforms to a maven build.
